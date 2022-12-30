@@ -2,7 +2,10 @@
 import TheAvatar from "./TheAvatar.vue";
 import TheInput from "./TheInput.vue";
 import TheButton from "./TheButton.vue";
-defineProps({
+
+import { computed } from "vue";
+
+const props = defineProps({
   theme: {
     type: String,
     required: false,
@@ -10,12 +13,23 @@ defineProps({
   },
 });
 
-const avatarSrc =
-  "https://anima-uploads.s3.amazonaws.com/projects/63ac4c88fe60ff9f4fab274f/releases/63ac4fd31d3fc5f7ea8baa63/img/ellipse-227-1@2x.png";
+const cssProps = computed(() => {
+  if (props.theme === "light") {
+    return {
+      "--screen-background-color": "#ffffff",
+    };
+  } else {
+    return {
+      "--screen-background-color": "#2e364a",
+    };
+  }
+});
+
+const avatarSrc = "ellipse-227-1@2x.png";
 </script>
 
 <template>
-  <div class="light screen">
+  <div class="screen" :style="cssProps">
     <TheAvatar :src="avatarSrc" :theme="theme" />
     <TheInput
       :title="'Full Name'"
@@ -52,19 +66,22 @@ const avatarSrc =
 </template>
 
 <style scoped>
-.light {
+.screen {
   align-items: flex-start;
-  background-color: var(--white);
+  background-color: var(--screen-background-color);
   border: 1px none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100vh;
-  min-height: 481px;
+  /* height: 100vh; */
+  /* min-height: 481px; */
   min-width: 380px;
+  max-width: 380px;
   padding: 20px;
   position: relative;
   width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .frame-2602 {

@@ -1,5 +1,5 @@
 <template>
-  <div class="frame-2594">
+  <div class="frame-2594" :style="cssProps">
     <div class="button_test">
       <div class="button_test-1">
         <div class="button valign-text-middle text">{{ title }}</div>
@@ -9,7 +9,9 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from "vue";
+
+const props = defineProps({
   title: {
     type: String,
     required: true,
@@ -20,13 +22,24 @@ defineProps({
   },
 });
 
+const cssProps = computed(() => {
+  if (props.theme === "light") {
+    return {
+      "--button_test-1-background-color": "#4c84ff",
+    };
+  } else {
+    return {
+      "--button_test-1-background-color": "#19a7ff",
+    };
+  }
+});
 </script>
 
 <style scoped>
 
 .button_test-1 {
   align-items: center;
-  background-color: #4c84ff;
+  background-color: var(--button_test-1-background-color);
   border-radius: 8px;
   display: flex;
   flex: 1;
@@ -36,7 +49,7 @@ defineProps({
 }
 
 .button {
-  color: var(--white);
+  color: #ffffff;
   font-weight: 400;
   line-height: normal;
   margin-top: -1px;

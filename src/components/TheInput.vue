@@ -1,5 +1,5 @@
 <template>
-  <div :class="size">
+  <div :class="size" :style="cssProps">
     <div class="full-name caption">{{ title }}</div>
     <div class="input-field-light">
       <div class="input-field">
@@ -10,9 +10,9 @@
 </template>
 
 <script setup>
-// import { computed } from "vue";
+import { computed } from "vue";
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: true,
@@ -32,13 +32,21 @@ defineProps({
   },
 });
 
-// const wrapperClass = computed(() => {
-//   if (props.size === "stretched") {
-//     return "stretched";
-//   } else {
-//     return "small";
-//   }
-// });
+const cssProps = computed(() => {
+  if (props.theme === "light") {
+    return {
+      "--input-field-background-color": "#4c84ff1a",
+      "--full-name-color": "#1b2e49",
+      "--default-color": "#676f8a80",
+    };
+  } else {
+    return {
+      "--input-field-background-color": "#00000033",
+      "--full-name-color": "#e0e5f5",
+      "--default-color": "#b9c5e680",
+    };
+  }
+});
 </script>
 
 <style scoped>
@@ -62,20 +70,22 @@ defineProps({
 
 .full-name {
   align-self: stretch;
-  color: var(--cloud-burst);
+  color: var(--full-name-color);
   font-weight: 600;
   line-height: normal;
   margin-top: -1px;
 }
+
 .input-field-light {
   align-items: flex-start;
   align-self: stretch;
   display: flex;
   position: relative;
 }
+
 .input-field {
   align-items: center;
-  background-color: var(--blueberry);
+  background-color: var(--input-field-background-color);
   border-radius: 5px;
   display: flex;
   flex: 1;
@@ -84,7 +94,7 @@ defineProps({
 }
 
 .default {
-  color: var(--storm-gray);
+  color: var(--default-color);
   flex: 1;
   font-weight: 400;
   line-height: normal;

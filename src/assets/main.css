@@ -1,12 +1,18 @@
 
 
 :root { 
-  --black: #000000;
-  --blueberry: #4c84ff1a;
-  --cloud-burst: #1b2e49;
-  --storm-gray: #676f8a80;
+  /* --blueberry: #4c84ff1a; */
+  /* --cloud-burst: #1b2e49; */
+  /* --storm-gray: #676f8a80; */
   --white: #ffffff;
+
+  /* Step2 - Dark theme colors */
+  /* --black-2: #00000033; */
+  /* --link-water: #e0e5f5; */
+  /* --periwinkle-gray: #b9c5e680; */
  
+
+
   --font-size-l: 14px;
   --font-size-m: 12px;
  
