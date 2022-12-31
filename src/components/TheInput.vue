@@ -1,6 +1,6 @@
 <template>
   <div :class="size" :style="cssProps">
-    <div class="full-name caption">{{ title }}</div>
+    <div class="title caption">{{ title }}</div>
     <div class="input-field-light">
       <div class="input-field">
         <div class="default text">{{ placeholder }}</div>
@@ -36,13 +36,13 @@ const cssProps = computed(() => {
   if (props.theme === "light") {
     return {
       "--input-field-background-color": "#4c84ff1a",
-      "--full-name-color": "#1b2e49",
+      "--title-color": "#1b2e49",
       "--default-color": "#676f8a80",
     };
   } else {
     return {
       "--input-field-background-color": "#00000033",
-      "--full-name-color": "#e0e5f5",
+      "--title-color": "#e0e5f5",
       "--default-color": "#b9c5e680",
     };
   }
@@ -68,9 +68,9 @@ const cssProps = computed(() => {
   position: relative;
 }
 
-.full-name {
+.title {
   align-self: stretch;
-  color: var(--full-name-color);
+  color: var(--title-color);
   font-weight: 600;
   line-height: normal;
   margin-top: -1px;
