@@ -7,10 +7,11 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
   argTypes: {
     onSubmit: {},
-    theme: {
-      control: { type: "select" },
-      options: ["light", "dark"],
-    },
+    // // STEP2: Add the `theme` argType
+    // theme: {
+    //   control: { type: "select" },
+    //   options: ["light", "dark"],
+    // },
   },
 };
 
@@ -38,17 +39,6 @@ Light.args = {
   theme: "light",
 };
 
-export const Dark = Template.bind({});
-Dark.parameters = {
-  design: {
-    type: "figma",
-    url: "https://www.figma.com/file/nQ0duij03wUKRhcOwanRnW/%F0%9F%8C%BC-Daisy-(Copy)-(Copy)?node-id=23857%3A43200&t=ON7cb06omsfUHo4E-0",
-  },
-};
-Dark.args = {
-  theme: "dark",
-};
-
 export const LightGerman = Template.bind({});
 LightGerman.args = {
   theme: "light",
@@ -62,3 +52,15 @@ LightGerman.args = {
     placeholder: "Platzhalter",
   },
 };
+
+// // STEP2: Add the `Dark` story
+// export const Dark = Template.bind({});
+// Dark.parameters = {
+//   design: {
+//     type: "figma",
+//     url: "https://www.figma.com/file/nQ0duij03wUKRhcOwanRnW/%F0%9F%8C%BC-Daisy-(Copy)-(Copy)?node-id=23857%3A43200&t=ON7cb06omsfUHo4E-0",
+//   },
+// };
+// Dark.args = {
+//   theme: "dark",
+// };

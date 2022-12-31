@@ -8,10 +8,11 @@ export default {
   argTypes: {
     // backgroundColor: { control: "color" },
     onClick: {},
-    theme: {
-      control: { type: "select" },
-      options: ["light", "dark"],
-    },
+    // // STEP2: Add the `theme` argType
+    // theme: {
+    //   control: { type: "select" },
+    //   options: ["light", "dark"],
+    // },
   },
 };
 
@@ -34,8 +35,9 @@ Light.args = {
   theme: "light",
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
-  title: "Confirm Payment",
-  theme: "dark",
-};
+// // STEP2: Add the `Dark` story
+// export const Dark = Template.bind({});
+// Dark.args = {
+//   title: "Confirm Payment",
+//   theme: "dark",
+// };
