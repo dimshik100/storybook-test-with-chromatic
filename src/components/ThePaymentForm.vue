@@ -13,6 +13,13 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(["submit"]);
+
+const submit = () => {
+  console.log("submit");
+  emit("submit");
+};
+
 const cssProps = computed(() => {
   if (props.theme === "light") {
     return {
@@ -61,7 +68,7 @@ const avatarSrc = "ellipse-227-1@2x.png";
       :placeholder="'Place holder'"
       :theme="theme"
     />
-    <TheButton :title="'Confirm Payment'" :theme="theme" />
+    <TheButton :title="'Confirm Payment'" @click="submit()" :theme="theme" />
   </div>
 </template>
 

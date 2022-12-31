@@ -1,11 +1,12 @@
 <template>
-  <div class="frame-2594" :style="cssProps">
-    <div class="button_test">
-      <div class="button_test-1">
-        <div class="button valign-text-middle text">{{ title }}</div>
-      </div>
-    </div>
-  </div>
+  <button
+    :style="cssProps"
+    type="button"
+    class="button text"
+    @click="log('Confirm Payment clicked')"
+  >
+    {{ title }}
+  </button>
 </template>
 
 <script setup>
@@ -22,6 +23,13 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(["click"]);
+
+const log = (value) => {
+  emit("click");
+  console.log(value);
+};
+
 const cssProps = computed(() => {
   if (props.theme === "light") {
     return {
@@ -36,39 +44,17 @@ const cssProps = computed(() => {
 </script>
 
 <style scoped>
-
-.button_test-1 {
-  align-items: center;
-  background-color: var(--button_test-1-background-color);
-  border-radius: 8px;
-  display: flex;
-  flex: 1;
-  gap: 4px;
-  justify-content: center;
-  padding: 8px 16px;
-}
-
 .button {
   color: #ffffff;
   font-weight: 400;
   line-height: normal;
-  margin-top: -1px;
-  text-align: center;
-  width: fit-content;
-}
-.button_test {
-  align-items: flex-start;
-  align-self: stretch;
-  display: flex;
-  position: relative;
-}
-
-.frame-2594 {
-  align-items: flex-start;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  position: relative;
+  border: none;
+  width: 100%;
+  background-color: var(--button_test-1-background-color);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  /* STEP2 - Unused CSS declaration - aligns the text in the middle of the button */
+  vertical-align: middle;
 }
 </style>
