@@ -19,6 +19,7 @@
     "@babel/core": "^7.20.7",
     "@playwright/test": "^1.28.1",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@storybook/addon-a11y": "^6.5.15",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
@@ -37,9 +38,12 @@
     "eslint-plugin-vue": "^9.3.0",
     "jsdom": "^20.0.3",
     "prettier": "^2.7.1",
+    "storybook-addon-designs": "^6.3.1",
     "storybook-addon-playwright": "^4.13.9",
     "vite": "^4.0.0",
     "vitest": "^0.25.6",
     "vue-loader": "^16.8.3"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "storybook-example@0.0.0"
 }
