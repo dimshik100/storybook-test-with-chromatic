@@ -1,18 +1,7 @@
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Poppins:600|Heebo:400");
 
 :root { 
-  /* --blueberry: #4c84ff1a; */
-  /* --cloud-burst: #1b2e49; */
-  /* --storm-gray: #676f8a80; */
-  --white: #ffffff;
-
-  /* Step2 - Dark theme colors */
-  /* --black-2: #00000033; */
-  /* --link-water: #e0e5f5; */
-  /* --periwinkle-gray: #b9c5e680; */
- 
-
-
   --font-size-l: 14px;
   --font-size-m: 12px;
  
@@ -33,22 +22,6 @@
   font-style: normal;
   font-weight: 600;
   letter-spacing: 0;
-}
-
-
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Poppins:600|Heebo:400");
-
-
-.screen a {
-  display: contents;
-  text-decoration: none;
-}
-
-.valign-text-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 * {
