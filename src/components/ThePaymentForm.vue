@@ -11,6 +11,21 @@ const props = defineProps({
     required: false,
     default: "light",
   },
+  texts: {
+    type: Object,
+    required: false,
+    default: () => {
+      return {
+        fullName: "Full Name",
+        creditCardInfo: "Credit Card Info",
+        expDate: "Exp Date",
+        cvv: "CVV",
+        zipCode: "Zip Code",
+        confirmPayment: "Confirm Payment",
+        placeholder: "Place holder",
+      };
+    },
+  },
 });
 
 const emit = defineEmits(["submit"]);
@@ -39,36 +54,40 @@ const avatarSrc = "ellipse-227-1@2x.png";
   <div class="screen" :style="cssProps">
     <TheAvatar :src="avatarSrc" :theme="theme" />
     <TheInput
-      :title="'Full Name'"
-      :placeholder="'Place holder'"
+      :title="props.texts.fullName"
+      :placeholder="props.texts.placeholder"
       :theme="theme"
     />
     <TheInput
-      :title="'Credit Card Info'"
-      :placeholder="'Place holder'"
+      :title="props.texts.creditCardInfo"
+      :placeholder="props.texts.placeholder"
       :theme="theme"
     />
 
     <div class="frame-2602">
       <TheInput
-        :title="'Exp Date'"
+        :title="props.texts.expDate"
         :placeholder="'MM/YY'"
         :theme="theme"
         :size="'small'"
       />
       <TheInput
-        :title="'CVV'"
+        :title="props.texts.cvv"
         :placeholder="'***'"
         :theme="theme"
         :size="'small'"
       />
     </div>
     <TheInput
-      :title="'Zip Code'"
-      :placeholder="'Place holder'"
+      :title="props.texts.zipCode"
+      :placeholder="props.texts.placeholder"
       :theme="theme"
     />
-    <TheButton :title="'Confirm Payment'" @click="submit()" :theme="theme" />
+    <TheButton
+      :title="props.texts.confirmPayment"
+      @click="submit()"
+      :theme="theme"
+    />
   </div>
 </template>
 

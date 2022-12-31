@@ -48,3 +48,17 @@ Dark.parameters = {
 Dark.args = {
   theme: "dark",
 };
+
+export const LightGerman = Template.bind({});
+LightGerman.args = {
+  theme: "light",
+  texts: {
+    fullName: "Vollständiger Name",
+    creditCardInfo: "Kreditkarteninformationen",
+    expDate: "Haltbarkeitsdatum",
+    cvv: "CVV",
+    zipCode: "Postleitzahl",
+    confirmPayment: "Bestätige Zahlung",
+    placeholder: "Platzhalter",
+  },
+};
