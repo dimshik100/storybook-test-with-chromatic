@@ -54,7 +54,7 @@ const cssProps = computed(() => {
   border-radius: 8px;
   padding: 8px 16px;
   cursor: pointer;
-  /* STEP3 - Unused CSS declaration - aligns the text in the middle of the button */
+  /* STEP2 - Unused CSS declaration - aligns the text in the middle of the button */
   vertical-align: middle;
 }
 </style>
