@@ -29,6 +29,12 @@ const Template = (args) => ({
 });
 
 export const Light = Template.bind({});
+Light.parameters = {
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/nQ0duij03wUKRhcOwanRnW/%F0%9F%8C%BC-Daisy-(Copy)-(Copy)?node-id=23985%3A43116&t=fRgxKCqiENsvWLEy-0",
+  },
+};
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Light.args = {
   title: "Confirm Payment",
