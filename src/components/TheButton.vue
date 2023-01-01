@@ -46,13 +46,13 @@ const cssProps = computed(() => {
 <style scoped>
 .button {
   color: #ffffff;
-  font-weight: 400;
+  font-weight: 700;
   line-height: normal;
   border: none;
   width: 100%;
   background-color: var(--button_test-1-background-color);
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 10px 16px;
   cursor: pointer;
   /* STEP2 - Unused CSS declaration - aligns the text in the middle of the button */
   vertical-align: middle;
